@@ -36,6 +36,8 @@ app.set("view engine", "ejs");
     const character=req.body.character;
     marvel.characters.findByName(character,function(err, results) {
         
+      // // console.log(results.data[0].series);
+      // res.send(results);
         if(results.meta.count===0)
         {
             res.sendFile(__dirname+"/failure.html");
